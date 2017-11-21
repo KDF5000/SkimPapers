@@ -1,0 +1,9 @@
+<!--pages/post/post.wxml-->
+<view class="container">
+  <form bindsubmit='formSubmit'>
+  <input name="title" placeholder='论文标题'></input>
+  <textarea name="abstract" maxlength="500" placeholder='摘要'></textarea>
+  <textarea name="content" placeholder='补充说明'></textarea>
+  <button formType="submit" >Submit</button>
+  </form>
+</view>

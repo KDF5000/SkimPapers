@@ -1,0 +1,35 @@
+<!--pages/home/home.wxml-->
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+</loading>
+
+<view wx:for="{{papers}}" wx:key="unique" class="container">
+    <view class="paper-item">
+      <text class="paper-title">{{item.title}}</text>
+      <text class="paper-abstract">{{item.abstract}}</text>
+      <view class="user-info">
+          <image class="user-avatar" src='{{item.user_avatar}}'></image>
+          <text class="user-name">{{item.user_name}}</text>
+          <text class="date">{{item.date}}</text>
+      </view>
+      <view class="cutting-line"></view>
+    </view>
+</view>
+<view class="tips1" style='text-align:center'>
+    <!-- <view wx:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+    <icon type="waiting" size="15"/><text style='margin-left:20rpx;font-size:26rpx'>玩命的加载中...</text>
+    </view>
+    <view wx:else><text>没有更多内容了</text></view> -->
+    <view wx:if="{{noMore}}"><text style='display:block;margin-top:20rpx;margin-bottom:20rpx;font-size:26rpx;line-height:40rpx;color:#6d6d6d'>没有更多内容了...</text></view>
+</view>
+<!-- 底部菜单栏，无效 -->
+<!-- <view class="footer-tab">
+    <view class="tab">
+      <image class="tab-img" src='/images/sub.png' ></image>
+      <text class="tab-text">点击发布</text>
+    </view>
+</view> -->
+
+<!-- 加号按钮 -->
+<view id="submit" bindtap='newPaper'>
+</view>
