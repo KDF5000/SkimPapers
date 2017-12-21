@@ -12,7 +12,7 @@ Page({
     hidden: false,
     papers:[],
     page: 1,
-    pageSize: 2,
+    pageSize: 4,
     noMore: false,
     hasRefresh: false,
     count: 1, //for debug
@@ -35,6 +35,7 @@ Page({
             })
             return
           }
+          
           that.data.papers = that.data.papers.concat(data['data'])
           that.setData({
             hidden: true,
@@ -52,40 +53,47 @@ Page({
       fail(error) {
         util.showModel('请求失败', error);
         console.log('request fail', error);
+      },
+      complete(){
+        wx.stopPullDownRefresh()
       }
     })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    // var that = this
-    // var url = "" //获取数据url
-    // //请求网路获取数据
-    // that.data.papers = [{
+    //mock
+
+    // this.data.papers = [{
     //   "unique": 1,
     //   "title": "Atlas: Baidu`s key-value storage system for cloud data",
     //   "abstract": "本文针对百度网盘的存储场景，分析了百度存储文件的负责特征，发现百度网盘的文件大小范围基本在256k以下，这种文件大小不恰好文件系统和kv存储系统都不能很好的处理，因此自己设计了Atalas来解决...",
-    //   "userImg": "http://www.amcoitsystems.com/wp-content/uploads/2017/07/golang.sh_.png",
-    //   "userName": "KDF5000",
+    //   "user_avatar": "/images/default.png",
+    //   "user_name": "KDF5000",
     //   "date": "2017/02/13"
     // },
     // {
     //   "unique": 2,
     //   "title": "Atlas: Baidu`s key-value storage system for cloud data",
     //   "abstract": "本文针对百度网盘的存储场景，分析了百度存储文件的负责特征，发现百度网盘的文件大小范围基本在256k以下，这种文件大小不恰好文件系统和kv存储系统都不能很好的处理，因此自己设计了Atalas来解决...",
-    //   "userImg": "http://www.amcoitsystems.com/wp-content/uploads/2017/07/golang.sh_.png",
-    //   "userName": "KDF5000",
+    //   "user_avatar": "/images/default.png",
+    //   "user_name": "KDF5000",
     //   "date": "2017/02/13"
     // },
     // {
     //   "unique": 3,
     //   "title": "Atlas: Baidu`s key-value storage system for cloud data",
     //   "abstract": "本文针对百度网盘的存储场景，分析了百度存储文件的负责特征，发现百度网盘的文件大小范围基本在256k以下，这种文件大小不恰好文件系统和kv存储系统都不能很好的处理，因此自己设计了Atalas来解决...",
-    //   "userImg": "http://www.amcoitsystems.com/wp-content/uploads/2017/07/golang.sh_.png",
-    //   "userName": "KDF5000",
+    //   "user_avatar": "/images/default.png",
+    //   "user_name": "KDF5000",
     //   "date": "2017/02/13"
-    // }].concat(this.data.papers)
+    // }]
+    // that.setData({
+    //   hidden: true,
+    //   papers: that.data.papers
+    // })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    //请求网路获取数据
     this.loadMore()
   },
 
@@ -93,6 +101,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+     
   },
 
   /**
@@ -143,7 +152,7 @@ Page({
     //   "unique": length+1,
     //   "title": "Atlas: Baidu`s key-value storage system for cloud data",
     //   "abstract": "本文针对百度网盘的存储场景，分析了百度存储文件的负责特征，发现百度网盘的文件大小范围基本在256k以下，这种文件大小不恰好文件系统和kv存储系统都不能很好的处理，因此自己设计了Atalas来解决...",
-    //   "userImg": "http://www.amcoitsystems.com/wp-content/uploads/2017/07/golang.sh_.png",
+    //   "userImg": "/images/default.png",
     //   "userName": "KDF5000",
     //   "date": "2017/02/13"
     // }])
@@ -173,6 +182,13 @@ Page({
   newPaper: function(){
     wx.navigateTo({
       url: "/pages/post/post",
+    })
+  },
+  postDetail: function(event){
+    console.log(event['currentTarget']['dataset']['id'])
+    var id = event['currentTarget']['dataset']['id']
+    wx.navigateTo({
+      url: "/pages/detail/detail?id="+id,
     })
   }
 })

@@ -22,11 +22,11 @@ $config = [
      * sBSHi1YE43182
      */
     'mysql' => [
-        'host' => 'localhost',
+        'host' => '172.16.135.107',
         'port' => 3306,
         'user' => 'root',
         'db'   => 'cAuth',
-        'pass' => 'wx9934856be2328c9d', 
+        'pass' => 'root@qcloud',
         'char' => 'utf8mb4'
     ],
 

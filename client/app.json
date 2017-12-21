@@ -3,7 +3,9 @@
     "pages/home/home",
     "pages/post/post",
     "pages/index/index",
-    "pages/addCgi/addCgi"
+    "pages/addCgi/addCgi",
+    "pages/test/test",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundColor": "#ffffff",
@@ -12,6 +14,6 @@
     "navigationBarTitleText": "SkimPapers",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true,
-    "onReachBottomDistance": 100
+    "onReachBottomDistance": 70
   }
 }

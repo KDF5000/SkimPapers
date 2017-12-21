@@ -1,0 +1,17 @@
+<!--pages/post/post.wxml-->
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+</loading>
+<view class="container">
+  <text class="title">{{item.title}}</text>
+  <view class="author-info">
+     <text class="date">{{item.date}}</text> <text class='tips'> 来自 </text>
+     <text class="author">{{item.user_name}}</text>
+  </view>
+  <text class="abstract">{{item.abstract}}</text>
+  <view class="extra">
+    <!-- <view class="extra-tip">"</view> -->
+    <text class="extra-info">{{item.content}}</text>
+  </view>
+  
+</view>

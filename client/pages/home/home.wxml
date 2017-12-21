@@ -3,8 +3,9 @@
     加载中...
 </loading>
 
-<view wx:for="{{papers}}" wx:key="unique" class="container">
-    <view class="paper-item">
+<view wx:for="{{papers}}" wx:key="id" class="container">
+  <!-- <navigator url="/pages/detail/detail?id={{item.id}}"> -->
+    <view class="paper-item" data-id="{{item.id}}"bindtap='postDetail'>
       <text class="paper-title">{{item.title}}</text>
       <text class="paper-abstract">{{item.abstract}}</text>
       <view class="user-info">
@@ -14,6 +15,7 @@
       </view>
       <view class="cutting-line"></view>
     </view>
+  <!-- </navigator> -->
 </view>
 <view class="tips1" style='text-align:center'>
     <!-- <view wx:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">

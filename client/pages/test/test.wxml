@@ -1,0 +1,27 @@
+<!--pages/home/home.wxml-->
+<view class='container'>
+        <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
+        class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad"  bindscroll="scroll">
+        <view wx:if="{{hasRefesh}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+          <icon type="waiting" size="45"/><text>刷新中...</text>
+        </view>
+        <view wx:else  style="display:none" ><text></text></view>
+          <view wx:for="{{papers}}" wx:key="unique">
+              <view class="paper-item">
+                <text class="paper-title">{{item.title}}</text>
+                <text class="paper-abstract">{{item.abstract}}</text>
+                <view class="user-info">
+                    <image class="user-avatar" src='{{item.user_avatar}}'></image>
+                    <text class="user-name">{{item.user_name}}</text>
+                    <text class="date">{{item.date}}</text>
+                </view>
+                <view class="cutting-line"></view>
+              </view>
+          </view>
+        </scroll-view>
+        <view class="body-view">
+          <loading hidden="{{hidden}}" bindchange="loadingChange">
+              加载中...
+          </loading>
+        </view>
+</view>
