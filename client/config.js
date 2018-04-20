@@ -4,8 +4,7 @@
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
 //var host = 'https://yxv2mpig.qcloud.la';
-//var host = 'https://haobh7q7.qcloud.la';
-var host = 'https://792812338.kdf5000.com';
+var host = 'https://haobh7q7.qcloud.la';
 
 var config = {
 
