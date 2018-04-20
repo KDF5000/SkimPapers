@@ -32,6 +32,6 @@
     </view>
 </view> -->
 
-<!-- 加号按钮 -->
+<!-- 加号按钮 个人小程序不能添加，审核不通过 -->
 <view id="submit" bindtap='newPaper'>
 </view>

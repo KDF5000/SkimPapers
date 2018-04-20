@@ -7,10 +7,11 @@ $config = [
     'rootPath' => '',
 
     // 微信小程序 AppID
-    'appId' => 'wx9934856be2328c9d',
+    //wx9934856be2328c9d kdf5000
+    'appId' => 'wx6cfb9b30c2452f79',
     //sBSHi1YE43182
     // 微信小程序 AppSecret
-    'appSecret' => '80a74a8e56e70795f762475a01c135b4',
+    'appSecret' => '34c8150afd8f72018839f70089a7b0a9',
 
     // 使用腾讯云代理登录
     'useQcloudLogin' => true,
@@ -20,13 +21,14 @@ $config = [
      * 若使用了腾讯云微信小程序解决方案
      * 开发环境下，MySQL 的初始密码为您的微信小程序 AppID
      * sBSHi1YE43182
+     * 生产环境密码：ktDF2bNe
      */
     'mysql' => [
-        'host' => '172.16.135.107',
+        'host' => 'localhost',
         'port' => 3306,
         'user' => 'root',
         'db'   => 'cAuth',
-        'pass' => 'root@qcloud',
+        'pass' => 'ktDF2bNe',
         'char' => 'utf8mb4'
     ],
 
